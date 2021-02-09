@@ -18,18 +18,18 @@ host、port、password、database都会采用默认值，都能够进行修改�
 
 #当前API
 
-https://localhost:8080/keys（查看所有的keys）
+https://localhost:8080/keys ##（查看所有的keys）
 
-https://localhost:8080/keys/abc（模糊匹配 `*abc*`）
+https://localhost:8080/keys/abc ##（模糊匹配 `*abc*`）
 
-https://localhost:8080/keys/abc*（模糊匹配 `abc*`）
+https://localhost:8080/keys/abc* ##（模糊匹配 `abc*`）
 
-https://localhost:8080/keys/*abc（模糊匹配 `*abc`）
+https://localhost:8080/keys/*abc ##（模糊匹配 `*abc`）
 
-https://localhost:8080/keys/*abc*（模糊匹配 `*abc*`）
+https://localhost:8080/keys/*abc* ##（模糊匹配 `*abc*`）
 
-https://localhost:8080/get/abc（精确匹配）
+https://localhost:8080/get/abc ##（精确匹配）
 
-https://localhost:8080/set/{key}:{value}（设置值）
+https://localhost:8080/set/{key}:{value} ##（设置值）
 
-https://localhost:8080/delete/abc（删除值）
+https://localhost:8080/delete/abc ##（删除值）
