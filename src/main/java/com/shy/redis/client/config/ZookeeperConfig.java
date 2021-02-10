@@ -17,6 +17,7 @@ import java.io.IOException;
  */
 @Configuration
 @Slf4j
+@SuppressWarnings("all")
 public class ZookeeperConfig {
 
     @Value("${zookeeper.connect-string}")
@@ -35,6 +36,7 @@ public class ZookeeperConfig {
                 }
             });
         } catch (IOException e) {
+            log.error("zookeeper create fail", e);
         }
         return zooKeeper;
     }

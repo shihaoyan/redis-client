@@ -9,5 +9,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * @since 2021-02-09 9:50
  */
 @Configuration
+@SuppressWarnings("all")
 public class WebConfig implements WebMvcConfigurer {
 }

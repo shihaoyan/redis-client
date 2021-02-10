@@ -19,6 +19,7 @@ import org.springframework.data.redis.core.StringRedisTemplate;
  * @since 2021-02-09 9:51
  */
 @Configuration
+@SuppressWarnings("all")
 public class CustomerRedisConfig {
 
     @Value("${redis.host}")

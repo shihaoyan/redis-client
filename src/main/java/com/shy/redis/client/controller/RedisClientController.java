@@ -14,6 +14,7 @@ import java.util.Set;
  * @since 2021-02-09 10:59
  */
 @RestController
+@SuppressWarnings("all")
 public class RedisClientController {
 
     @Autowired
