@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @Slf4j
+@SuppressWarnings("all")
 public class ZookeeperClientController {
 
 
