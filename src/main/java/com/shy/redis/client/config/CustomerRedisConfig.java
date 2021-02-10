@@ -3,6 +3,7 @@ package com.shy.redis.client.config;
 import io.lettuce.core.ClientOptions;
 import io.lettuce.core.TimeoutOptions;
 import io.lettuce.core.resource.DefaultClientResources;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,18 +21,22 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 @Configuration
 public class CustomerRedisConfig {
 
-    public static final String HOST = "localhost";
-    public static final int PORT = 6379;
-    public static final int INDEX = 0;
-    public static final String PASSWORD = null;
+    @Value("${redis.host}")
+    public String host;
+    @Value("${redis.port}")
+    public int port;
+    @Value("${redis.database}")
+    public int database;
+    @Value("${redis.password}")
+    public String password;
 
     @Bean
     public RedisStandaloneConfiguration redisConfiguration() {
         RedisStandaloneConfiguration config = new RedisStandaloneConfiguration();
-        config.setHostName(HOST);
-        config.setPort(PORT);
-        config.setDatabase(INDEX);
-        config.setPassword(RedisPassword.of(PASSWORD));
+        config.setHostName(host);
+        config.setPort(port);
+        config.setDatabase(database);
+        config.setPassword(RedisPassword.of(password));
         return config;
     }
 
