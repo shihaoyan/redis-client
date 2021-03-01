@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 import org.springframework.data.redis.connection.RedisPassword;
 import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
 import org.springframework.data.redis.connection.lettuce.LettuceClientConfiguration;
@@ -32,6 +33,7 @@ public class CustomerRedisConfig {
     public String password;
 
     @Bean
+    @Scope("session")
     public RedisStandaloneConfiguration redisConfiguration() {
         RedisStandaloneConfiguration config = new RedisStandaloneConfiguration();
         config.setHostName(host);
@@ -42,6 +44,7 @@ public class CustomerRedisConfig {
     }
 
     @Bean
+    @Scope("session")
     public StringRedisTemplate redisTemplate(RedisStandaloneConfiguration redisConfiguration) {
         LettuceClientConfiguration.LettuceClientConfigurationBuilder builder = LettuceClientConfiguration.builder();
         RedisProperties.Lettuce lettuce = new RedisProperties.Lettuce();

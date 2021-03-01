@@ -1,4 +1,4 @@
-package com.shy.redis.client.controller;
+package com.shy.redis.client.controller.zookeeper;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.zookeeper.CreateMode;
